@@ -1,0 +1,8 @@
+R1(config)#username sinan secret 1102
+R1(config)#ip domain-name omar.com
+R1(config)#crypto key generate rsa
+How many bits in the modulus [512]: 700 ****select number between 360-2048
+R1(config)#line vty 0 15
+R1(config-line)#transport input ssh
+R1(config-line)#login local
+R1(config-line)#do copy run start

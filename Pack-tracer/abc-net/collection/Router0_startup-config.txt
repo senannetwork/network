@@ -1,0 +1,199 @@
+
+Router>en ========
+Router#conf t =============
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#host
+Router(config)#hostname Baghdad ====================
+Baghdad(config)#int f0/1 =====================
+Baghdad(config-if)#ip add 10.10.0.1 255.255.255.0 ===================
+Baghdad(config-if)#no shut
+Baghdad(config-if)#do wr ===================
+Building configuration...
+[OK]
+Baghdad(config-if)#enable password 1234 ==================
+Baghdad(config)#do wr
+Building configuration...
+[OK]	
+Baghdad(config)#enable secret 5678 =============================
+Baghdad(config)#do wr
+Building configuration...
+[OK]
+Baghdad(config)#do logout
+======================
+Baghdad(config)#do sh ip int br ==============================
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        unassigned      YES unset  administratively down down 
+FastEthernet0/1        10.10.0.1       YES manual administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+Baghdad(config)#int f0/1
+Baghdad(config-if)#no sh
+Baghdad(config-if)#no shutdown =====================================
+Baghdad(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+do sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        unassigned      YES unset  administratively down down 
+FastEthernet0/1        10.10.0.1       YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+Baghdad(config-if)#^Z
+Baghdad#
+Baghdad#en
+Baghdad#conf t
+Baghdad(config)#line con 0 ========================= secret for consol
+Baghdad(config-line)#password 1212	
+Baghdad(config-line)#^Z
+Baghdad#
+%SYS-5-CONFIG_I: Configured from console by console
+^Z
+Baghdad#en
+Baghdad#conf t
+Baghdad(config)#line aux 0 ==============================
+Baghdad(config-line)#password 3434
+Baghdad(config-line)#do wr
+Building configuration...
+[OK]
+Baghdad(config-line)#^Z ============================
+Baghdad#
+Baghdad#sh
+Baghdad#show run ====================================
+Building configuration...
+
+Current configuration : 665 bytes
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Baghdad
+!
+!
+!
+enable secret 5 $1$mERr$RchIbJiXmCXFtFBZll50l/
+enable password 1234
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet0/1
+ ip address 10.10.0.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password 1212
+!
+line aux 0
+ password 3434
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+Baghdad#en
+Baghdad#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Baghdad(config)#serv
+Baghdad(config)#service pass
+Baghdad(config)#service password-encryption ===========ENC
+Baghdad(config)#do sh run
+Building configuration...
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Baghdad(config-if)#line vty 0 4 ==========================
+Baghdad(config-line)#password 1234 =========================
+Baghdad(config-line)#login ========================
+Baghdad(config-line)#exit ====================
+Baghdad(config)#username omar secret 2011 ============================
+Baghdad(config)#username sinan secret 1977 =============================
+Baghdad(config)#crypto key generate rsa ============================
+% Please define a domain-name first.
+Baghdad(config)#ip dom
+Baghdad(config)#ip domain-name mony.com ===============================
+Baghdad(config)#crypto key generate rsa ============================
+The name for the keys will be: Baghdad.mony.com
+Choose the size of the key modulus in the range of 360 to 2048 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 400
+% Generating 400 bit RSA keys, keys will be non-exportable...[OK]
+
+Baghdad(config)#line vty 0 4 =================================
+*Mar 2 0:22:56.194: RSA key size needs to be at least 768 bits for ssh version 2
+*Mar 2 0:22:56.194: %SSH-5-ENABLED: SSH 1.5 has been enabled
+Baghdad(config-line)#login local==============================
+Baghdad(config-line)#transport in========================
+Baghdad(config-line)#transport input ?=======================
+  all     All protocols
+  none    No protocols
+  ssh     TCP/IP SSH protocol
+  telnet  TCP/IP Telnet protocol
+Baghdad(config-line)#transport input ssh =============================
+Baghdad(config-line)#do sh run
+Building configuration...
+Baghdad(config-line)#do show history ==================================
+  username omar secret 2011
+  username sinan secret 1977
+  crypto key generate rsa
+  ip domain-name mony.com
+  crypto key generate rsa
+  line vty 0 4
+  login local
+  transport input ssh
+  do sh run
+Baghdad(config-line)#exit
+Baghdad(config)#banner 
+Baghdad(config)#banner motd #Please check conf# ========================================
+Baghdad(config)#do logout
+
+
+

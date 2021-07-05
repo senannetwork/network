@@ -1,0 +1,29 @@
+Dec 02 00:43:07.267 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 02 00:43:07.268 HYPERVISOR: Started on IP = localhost, TCP port = 50420.
+Dec 02 00:43:07.737 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 02 00:43:07.738 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips 
+Dec 02 00:43:07.757 GENERAL: working_dir=C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips
+Dec 02 00:43:07.758 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips\69740ada-561c-4c6d-9fe7-bcf867dee3dd 
+Dec 02 00:43:07.758 GENERAL: working_dir=C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips\69740ada-561c-4c6d-9fe7-bcf867dee3dd
+Dec 02 00:43:07.759 HYPERVISOR: exec_cmd: vm create R1 1 c1700 
+Dec 02 00:43:07.763 VM: VM R1 created.
+Dec 02 00:43:07.764 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Dec 02 00:43:07.764 HYPERVISOR: exec_cmd: c1700 get_mac_addr R1 
+Dec 02 00:43:07.765 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/al_sa/GNS3/images/IOS/c1700-adventerprisek9-mz.124-8.image 
+Dec 02 00:43:07.766 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 02 00:43:07.766 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x80618b54 
+Dec 02 00:43:07.767 HYPERVISOR: exec_cmd: vm set_exec_area R1 64 
+Dec 02 00:43:07.768 HYPERVISOR: exec_cmd: vm set_sparse_mem R1 1 
+Dec 02 00:43:07.769 HYPERVISOR: exec_cmd: vm set_ram R1 256 
+Dec 02 00:43:07.769 HYPERVISOR: exec_cmd: vm set_nvram R1 128 
+Dec 02 00:43:07.770 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 16 WIC-1T 
+Dec 02 00:43:07.771 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 32 WIC-1T 
+Dec 02 00:43:07.772 HYPERVISOR: exec_cmd: c1700 set_iomem R1 5 
+Dec 02 00:43:07.850 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/al_sa/GNS3/images/IOS/c1700-adventerprisek9-mz.124-8.image 
+Dec 02 00:49:31.582 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 02 00:49:31.586 HYPERVISOR: exec_cmd: vm extract_config R1 
+Dec 02 00:49:31.587 HYPERVISOR: exec_cmd: vm delete R1 
+Dec 02 00:49:31.587 VM: VM R1 destroyed.
+Dec 02 00:49:31.610 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 02 00:49:31.924 HYPERVISOR: Stopped.
+Dec 02 00:49:31.924 GENERAL: reset done.

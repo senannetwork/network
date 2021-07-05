@@ -1,0 +1,12 @@
+Router#en
+Router#conf t
+Router(config)#line vty 0 4
+Router(config-line)#pass
+Router(config-line)#password 1102
+Router(config-line)#login
+==========================
+==PC====
+==========================
+-cmd
+-telnet xxx.xxx.xxx.xxx
+-password XXXXX

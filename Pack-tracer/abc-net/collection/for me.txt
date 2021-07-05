@@ -1,0 +1,95 @@
+1- Router>en ====== to access
+2- Router#conf t ===== access to config
+3- Router(config)#hostname Baghdad =============  change name
+4- Baghdad(config)#int f0/1 ===== config ip
+5- Baghdad(config-if)#ip add 10.10.0.1 255.255.255.0 === put ip
+6- Baghdad(config-if)#no shut ===== let port work
+7- Baghdad(config-if)#do wr === save config
+8- Baghdad(config-if)#do sh ip int br ===== view ip and status
+9- Baghdad(config)#enable pass ==== maek pass
+10- Baghdad(config)#enable password 1234 === put pass
+11- Baghdad(config)#do wr ==== save
+12- Baghdad(config)#enable secret 5678 ===== make secret pass
+13- Baghdad(config)#copy run start ======= save
+14- Baghdad(config)#do logout ==== logout
+15- Baghdad#sh run ===== view ip and
+16- Baghdad(config)#line con 0 ==== port console
+17- Baghdad(config-line)#password 2011 ==== password for console
+18- Baghdad(config-line)#line aux 0 ===== port auxlry
+19- Baghdad(config-line)#password 1102 === password
+##############################################
+##############encryption###########
+##############################################
+20- service password-encryption ==== for security
+------------------------------
+========== 1 is done
+------------------------------
+# access from anyther position or telnet
+1- test(config-if)#line vty 0 4 ======= config for telnet
+2- test(config-line)#password 1234 ==== password
+3- test(config-line)#login ===== login
+# from compter open cmd and write :: telnet 10.10.10.10
+# insert the password
+######################################
+### make ssh security ###
+######################################
+4- test(config)#ip domain-name xxx.com ======= insert domain name 
+5- test(config)#crypto key generate rsa ====== active ssh
+# select size of the key modulus in the range of 360 to 2048
+6- test(config)#username omar secret 2011 ==== make user and pass
+7- test(config)#line vty 0 4 === give for user from 0 to 4
+8- test(config-line)# login local ======= to access for router
+9- test(config-line)#transport input ? ====== select how to connect for router
+  all     All protocols
+  none    No protocols
+  ssh     TCP/IP SSH protocol
+  telnet  TCP/IP Telnet protocol
+10- test(config-line)#transport input ssh ==== access for router by ssh
+# compter open cmd write :: ssh -l xxx 10.10.10.10
+11- test(config)#banner motd #please check this# ==== message
+12- test(config-if)#description this port for intranet ======= description
+######################################
+### Bulding Network ###
+######################################
+# Core switch the best port gigafast
+# Distribution
+# access switch (workstation)
+# idf intermeadiate data frame
+# Server
+# DMZ = Servers connect sw connect core or Server connect core
+# STP = Spanning True Protocol
+# ever sw it send single BPDU = Bridge Protocol Data Unit consists of
+# Priority id 32000 and bridg id (sw mac add)
+# if you have 3sw wich one its root or core13- Switch#sh spanning-tree === check wich one is root 
+######################################
+### 7 ###
+######################################
+# loop prevention = select on cable to send and reseve data
+# SW have 3 step to work = 1-Listening 15 sec (arp) 2-Learning 15 sec (cam table) 3-Forward
+1-sh mac-address-table = view port connection
+2-sh spanning-tree
+# how i know the SW is root = dose not close the port
+# and why the close same port = because one SW have big mac address
+# stp have number is 802.1D
+# stp rapid have number is 802.1W is faster than stp
+# how make convergence = this for speed connection  
+3-conf t
+4-spanning-tree mode rapid-pvst 
+# Vlan =virtual lan
+4-conf t
+5-vlan 5 = create vlan
+6-do sh flash = view info for ios and vlan
+7-name xxxx = change name for vlan
+8-do sh vlan = view information for vlan
+9-int f0/1 = conf port 0/1
+10-switchport access vlan 5 = put port 0/1 in the vlan 5
+# many ports access to vlan in the same time
+11-int range f0/11-20
+12-switchport access vlan 5
+13-int range f0/10,f0/5 select port random
+# for more security must change SW to no negotiate this stup to stop trunk btween SWs
+14-int range f0/1-4
+15-switchport mode access
+16-switchport nonegotiate
+
+

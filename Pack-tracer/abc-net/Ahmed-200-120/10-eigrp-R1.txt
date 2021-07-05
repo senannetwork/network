@@ -1,0 +1,22 @@
+R1(config)#router eigrp 5
+R1(config-router)#network 10.10.10.0 0.0.0.255  (0.0.0.255 = wild card)
+R1(config-router)#network 30.30.30.0 0.0.0.255  ** this ip for port f0/0
+** triple shooting
+R1#show ip route ** check if router have eigrp befor this time or no
+R1#show ip eigrp neighbors
+R1#show ip eigrp interfaces detail
+R1#show ip eigrp topology 
+
+
+
+** same steps in the R2
+
+
+example ** (255.255.224.0)
+you calault(255.255.255.0)
+===========(0.0    .31.255) this is wild card
+***سلبيات eigrp
+1- router poisoning == هكر يسبب في تغير معلومات الجداول
+2- triggered update == في حالة انقطاع الاتصال يقوم الروتر بتحديث البيانات ولا يعلم الادمن هناك خلال في الاتصال
+3- splite horiyon == لا يبعث نفس البيانات الئ بيقيت الروترات
+4- hold down timer ==  يبعث رسايل عن الفتحه اشتغلت او طفت

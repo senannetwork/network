@@ -1,0 +1,38 @@
+Dec 02 01:04:29.725 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 02 01:04:29.726 HYPERVISOR: Started on IP = localhost, TCP port = 61832.
+Dec 02 01:04:30.198 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 02 01:04:30.199 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips 
+Dec 02 01:04:30.200 GENERAL: working_dir=C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips
+Dec 02 01:04:30.200 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips\95e14113-c383-489e-a902-2d918a63ebce 
+Dec 02 01:04:30.210 GENERAL: working_dir=C:\Users\al_sa\Desktop\Cloud\network\gns3\Proj-1\project-files\dynamips\95e14113-c383-489e-a902-2d918a63ebce
+Dec 02 01:04:30.211 HYPERVISOR: exec_cmd: vm create R2 2 c3600 
+Dec 02 01:04:30.215 VM: VM R2 created.
+Dec 02 01:04:30.217 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5001 
+Dec 02 01:04:30.217 HYPERVISOR: exec_cmd: c3600 get_mac_addr R2 
+Dec 02 01:04:30.219 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/al_sa/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+Dec 02 01:04:30.220 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:04:30.220 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x605d3700 
+Dec 02 01:04:30.221 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+Dec 02 01:04:30.223 HYPERVISOR: exec_cmd: vm set_ram R2 256 
+Dec 02 01:04:30.225 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Dec 02 01:04:30.226 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:04:30.227 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 NM-16ESW 
+Dec 02 01:04:30.227 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:04:30.229 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1E 
+Dec 02 01:04:30.230 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:04:30.231 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 NM-1E 
+Dec 02 01:04:30.342 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/al_sa/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+Dec 02 01:04:41.687 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/al_sa/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+Dec 02 01:04:55.790 HYPERVISOR: exec_cmd: nio create_udp udp-d0e14b09-c66d-41ba-b33f-937d46ccead0 10004 127.0.0.1 10005 
+Dec 02 01:04:56.054 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-d0e14b09-c66d-41ba-b33f-937d46ccead0 
+Dec 02 01:04:56.055 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:05:56.116 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:05:56.117 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R2 1 0 
+Dec 02 01:05:56.119 HYPERVISOR: exec_cmd: nio delete udp-d0e14b09-c66d-41ba-b33f-937d46ccead0 
+Dec 02 01:05:56.527 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 02 01:05:56.528 HYPERVISOR: exec_cmd: vm extract_config R2 
+Dec 02 01:05:56.529 HYPERVISOR: exec_cmd: vm delete R2 
+Dec 02 01:05:56.530 VM: VM R2 destroyed.
+Dec 02 01:05:56.547 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 02 01:05:56.781 HYPERVISOR: Stopped.
+Dec 02 01:05:56.781 GENERAL: reset done.

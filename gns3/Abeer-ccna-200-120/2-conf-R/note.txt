@@ -1,0 +1,6 @@
+R1#conf t
+R1(config)#line console 0
+R1(config-line)#exec-timeout 4 30 ---secreen
+R1(config-line)#no exec-timeout 4 30  ---delete secreen
+========
+R1(config)#no ip domain-lookup ---serach in database for router

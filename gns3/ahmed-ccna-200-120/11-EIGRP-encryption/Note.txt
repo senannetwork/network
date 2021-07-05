@@ -1,0 +1,1 @@
+All routers is connect with switch in the same subnet (10.0.0.1/24)

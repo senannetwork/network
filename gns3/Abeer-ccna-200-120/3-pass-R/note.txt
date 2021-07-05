@@ -1,0 +1,9 @@
+R1(config)#line console 0
+R1(config-line)#password 1977
+R1(config-line)#login
+R1(config-line)#do copy run start
+=============================
+R1(config)#username xxx password xxx
+R1(config)#username xxx secret xxx
+
+

@@ -1,0 +1,6 @@
+How config gns3 with Vm ware
+1- setup vmware
+2- setup gns3 2.2.3
+3- download gns3vm 2.2.3
+4- open vm and import gns3vm
+test

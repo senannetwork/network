@@ -1,0 +1,8 @@
+R1(config)#line aux 0
+R1(config-line)#pass
+R1(config-line)#password 123
+R1(config-line)#login local
+R1(config-line)#! do show run
+R1(config-line)#! do erase startup-config
+R1(config-line)#! do reload
+R1(config-line)#! do erase nvram
